@@ -1,8 +1,33 @@
-const Browse = () =>{
+import Recipes from "./Recipe";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-  return(
-      <h1>Hello Browse</h1>
+const Read = () => {
+
+  const [recipes, setRecipes] = useState([]);
+
+  const ReloadData = ()=>{
+    axios.get('http://localhost:4000/api/recipes')
+      .then((response) => {
+        console.log(response.data);
+        setRecipes(response.data.recipes);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  useEffect(() => {
+    ReloadData();
+    
+  },[]);
+
+  return (
+    <div>
+      <h3>Hello from read component!</h3>
+      <Recipes myRecipes={recipes} ReloadData={ReloadData} />
+    </div>
   );
-
 }
-export default Browse;
+
+export default Read;

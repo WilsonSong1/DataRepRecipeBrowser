@@ -29,6 +29,31 @@ const recipeSchema = new mongoose.Schema({
 
 const recipeModel = new mongoose.model('Recipe',recipeSchema);
 
+app.get('/api/recipes', async (req, res) => {
+    const recipes = await recipeModel.find({});
+    res.status(200).json({recipes})
+});
+
+app.get('/api/recipe/:id', async (req ,res)=>{
+  const recipe = await recipeModel.findById(req.params.id);
+  res.json(recipe);
+})
+
+app.put('/api/recipe/:id', async (req, res)=>{
+  const recipe = await recipeModel.findByIdAndUpdate(req.params.id, req.body, {new:true});
+  res.send(recipe);
+})
+
+app.post('/api/recipes',async (req, res)=>{
+    console.log(req.body.title);
+    const{picture, name, time, ingredients, instructions} = req.body;
+
+     const newRecipe = new recipeModel({picture, name, time, ingredients, instructions});
+    await newRecipe.save();
+
+    res.status(201).json({"message":"Recipe Added!",Recipe:newRecipe});
+})
+
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server is running on http://localhost:${port}`);
 });
