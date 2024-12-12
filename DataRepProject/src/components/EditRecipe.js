@@ -44,7 +44,6 @@ const Edit = () => {
 
     return (
         <div>
-            <h3>Hello from edit component!</h3>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Edit Recipe Picture: </label>
@@ -63,7 +62,7 @@ const Edit = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Edit Recipe Time: </label>
+                    <label>Edit Recipe time to make: </label>
                     <input type="text"
                         className="form-control"
                         value={time}

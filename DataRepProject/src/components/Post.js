@@ -40,7 +40,7 @@ const Create = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Add Recipe Time: </label>
+                    <label>Add Recipe time to make: </label>
                     <input type="text"
                         className="form-control"
                         value={time}

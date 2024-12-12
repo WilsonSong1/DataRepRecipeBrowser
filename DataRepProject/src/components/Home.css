@@ -1,0 +1,30 @@
+body {
+    font-family: Georgia, Serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .page-container {
+    text-align: center;
+    margin-top: 100px;
+    
+  }
+  
+  .page-container button {
+    font-family: Georgia, Serif;
+    background-color: #009c6d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 2rem;
+    width:500px;
+    height:250px;
+  }
+  
+  .page-container button:hover {
+    background-color: #008a61;
+  }
