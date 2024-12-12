@@ -39,6 +39,11 @@ app.get('/api/recipe/:id', async (req ,res)=>{
   res.json(recipe);
 })
 
+app.delete('/api/recipe/:id', async(req, res)=>{
+  const recipe = await recipeModel.findByIdAndDelete(req.params.id);
+  res.send(recipe);
+})
+
 app.put('/api/recipe/:id', async (req, res)=>{
   const recipe = await recipeModel.findByIdAndUpdate(req.params.id, req.body, {new:true});
   res.send(recipe);
