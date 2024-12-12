@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import NavigationBar from './components/NavigationBar';
+import Home from './components/Home';
+import Browse from './components/Browse';
+import Post from './components/Post';
+import SignIn from './components/SignIn';
+import Edit from './components/EditRecipe';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavigationBar/>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/browse" element={<Browse/>}/>
+        <Route path="/post" element={<Post/>}/>
+        <Route path='/signIn' element={<SignIn/>}/>
+        <Route path='/edit/:id' element={<Edit/>}/>
+      </Routes>
+    </Router>
   );
 }
+
 export default App;
