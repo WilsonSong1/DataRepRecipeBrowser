@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import './Post.css';
 
 const Create = () => {
 
@@ -20,7 +21,7 @@ const Create = () => {
     }
 
     return (
-        <div className="container">
+        <div class="container-post">
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Add Recipe Picture: </label>

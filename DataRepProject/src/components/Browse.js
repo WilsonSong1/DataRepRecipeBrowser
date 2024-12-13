@@ -1,6 +1,7 @@
 import Recipes from "./Recipe";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import './Browse.css';
 
 const Read = () => {
 
