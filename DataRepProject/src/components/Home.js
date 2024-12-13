@@ -1,3 +1,4 @@
+//Importing required modules
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
@@ -16,10 +17,6 @@ const Home = () =>{
             </div>
         </div>
     );
-
-    function pageBrowse(){
-
-    }
 
 }
 export default Home;

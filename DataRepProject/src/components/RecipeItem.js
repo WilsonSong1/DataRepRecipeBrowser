@@ -1,3 +1,4 @@
+//importing required modules
 import { useEffect } from "react";
 import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
@@ -7,11 +8,12 @@ import axios from 'axios';
 const RecipeItem = (props)=> {
   useEffect(() => {
     console.log("Recipe Item:", props.myrecipe);
-  }, [props.myrecipe]); // Only run this effect when the mymovie prop changes
+  }, [props.myrecipe]);
 
   const handleDelete = (e)=>{
     e.preventDefault();
 
+    //Sends a delete request to server to remove a specific recipe b y id in database
     axios.delete('http://localhost:4000/api/recipe/'+props.myrecipe._id)
     .then((res)=>{
       props.Reload();
@@ -22,6 +24,7 @@ const RecipeItem = (props)=> {
 
   }
 
+  //Displaying the recipe to Browse page
   return (
     <div>
       <Card>

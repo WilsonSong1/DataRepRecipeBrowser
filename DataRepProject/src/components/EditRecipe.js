@@ -1,9 +1,11 @@
+//importing required modules
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Edit = () => {
+    //Defining state variables for recipe data
     const {id} = useParams();
     const [picture, setPicture] = useState("");
     const [name, setName] = useState("");
@@ -12,10 +14,12 @@ const Edit = () => {
     const [instructions, setInstructions] = useState("");
     const navigate = useNavigate();
 
+    //Finding specific recipe by data from the database
     useEffect(()=>{
         axios.get('http://localhost:4000/api/recipe/'+id)
         .then((res)=>{
             console.log("sucess "+res.data);
+            //set new data int o the state variables
             setPicture(response.data.picture);
             setName(response.data.name);
             setTime(response.data.time);
@@ -31,9 +35,10 @@ const Edit = () => {
         const recipe = { id, picture, name, time, ingredients, instructions};
         console.log(recipe);
 
+        //updating the recipe data on database
         axios.put('http://localhost:4000/api/recipe/'+id, recipe)
         .then((res)=>{
-            console.log("Edited: "+res.data);
+            alert("Successfully updated!");
             navigate('/read');
         })
         .catch((err)=>{
@@ -42,6 +47,7 @@ const Edit = () => {
       
     }
 
+    //Creating form for user to edit their recipes
     return (
         <div>
             <form onSubmit={handleSubmit}>

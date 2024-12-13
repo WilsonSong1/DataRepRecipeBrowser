@@ -1,9 +1,11 @@
+//Importing required modules
 import axios from "axios";
 import { useState } from "react";
 import './Post.css';
 
 const Create = () => {
 
+    //Defining state variables for recipe data
     const[picture, setPicture] = useState('');
     const[name, setName] = useState('');
     const[time, setTime] = useState('');
@@ -12,13 +14,15 @@ const Create = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        //Create an object to send to api
         const recipe = {picture, name, time, ingredients, instructions};
-
+        //Send recipe data to API
         axios.post('http://localhost:4000/api/recipes',recipe)
         .then(()=>alert("Recipe Successfully added!"))
         .catch();
     }
 
+    //Creating form for user to post recipes
     return (
         <div class="container-post">
             <form onSubmit={handleSubmit}>
