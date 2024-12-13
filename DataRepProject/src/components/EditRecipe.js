@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import './EditRecipe.css';
 
 const Edit = () => {
     //Defining state variables for recipe data
@@ -39,7 +40,7 @@ const Edit = () => {
         axios.put('http://localhost:4000/api/recipe/'+id, recipe)
         .then((res)=>{
             alert("Successfully updated!");
-            navigate('/read');
+            navigate('/browse');
         })
         .catch((err)=>{
             console.log(err);
@@ -49,7 +50,7 @@ const Edit = () => {
 
     //Creating form for user to edit their recipes
     return (
-        <div>
+        <div class="container-post">
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Edit Recipe Picture: </label>

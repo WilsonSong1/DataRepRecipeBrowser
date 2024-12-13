@@ -1,9 +1,11 @@
+  /*Background colour*/
   .page-container {
     text-align: center;
-    background-color: #777e7c !important;
+    background-color: #777e7c;
     height: 100vh;
   }
-  
+
+  /*Button adjustments*/
   .page-container button {
     font-family: Georgia, Serif;
     background-color: #009c6d;
