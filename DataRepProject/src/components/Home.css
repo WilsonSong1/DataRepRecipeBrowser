@@ -1,14 +1,7 @@
-body {
-    font-family: Georgia, Serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
   .page-container {
     text-align: center;
-    margin-top: 100px;
-    
+    background-color: #777e7c !important;
+    height: 100vh;
   }
   
   .page-container button {
@@ -16,8 +9,7 @@ body {
     background-color: #009c6d;
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    margin: 10px;
+    margin: 40px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 2rem;
@@ -28,3 +20,4 @@ body {
   .page-container button:hover {
     background-color: #008a61;
   }
+

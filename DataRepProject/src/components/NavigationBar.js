@@ -2,11 +2,11 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
-
+import './NavigationBar.css';
 
 const NavigationBar = () => {
   return (
-        <Navbar bg="dark" data-bs-theme="dark" expand="lg" className="bg-body-tertiary" >
+        <Navbar>
           <Container large>
             <Navbar.Brand href="/">Home</Navbar.Brand>
             <Navbar.Collapse>
@@ -14,7 +14,6 @@ const NavigationBar = () => {
               <Nav.Link href="/browse">Browse</Nav.Link>
               <Nav.Link href="/post">Post</Nav.Link>
             </Nav>
-            <Button href="/signin"variant="outline-success">Sign In</Button>
             </Navbar.Collapse>
           </Container>
       </Navbar>

@@ -20,8 +20,7 @@ const Create = () => {
     }
 
     return (
-        <div>
-            <h3>Hello from create component!</h3>
+        <div className="container">
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Add Recipe Picture: </label>
