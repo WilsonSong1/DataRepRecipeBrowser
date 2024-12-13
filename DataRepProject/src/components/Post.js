@@ -13,10 +13,9 @@ const Create = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const recipe = {picture, name, time, ingredients, instructions};
-        console.log(recipe);
 
         axios.post('http://localhost:4000/api/recipes',recipe)
-        .then((res)=>{console.log(res.data)})
+        .then(()=>alert("Recipe Successfully added!"))
         .catch();
     }
 

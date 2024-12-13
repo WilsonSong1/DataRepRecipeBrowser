@@ -30,7 +30,7 @@ const RecipeItem = (props)=> {
           <blockquote className="blockquote mb-0">
             <img src={props.myrecipe.picture} alt={props.myrecipe.name}/>
             <footer>{"Time to Make: " + props.myrecipe.time} <br/>
-            {"Ingredients: " + props.myrecipe.ingredients} <br/>
+            {"Ingredients: "+ props.myrecipe.ingredients} <br/> <br/>
             {"Instructions: " + props.myrecipe.instructions}
             </footer>
           </blockquote>
